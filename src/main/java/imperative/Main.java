@@ -2,10 +2,16 @@ package imperative;
 
 import java.util.List;
 
+import static imperative.Main.Race.*;
+
 public class Main {
     public static void main(String[] args) {
         List<Unit> units = List.of(
-
+                new Unit("Geralt", WITCHER),
+                new Unit("Iorveth", ELF),
+                new Unit("Zoltan", DWARF),
+                new Unit("Regis", VAMPIRE),
+                new Unit("Shupe", OGROID)
         );
     }
 
