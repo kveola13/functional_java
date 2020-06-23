@@ -7,6 +7,12 @@
     <groupId>com.kveola13</groupId>
     <artifactId>functional_java</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
