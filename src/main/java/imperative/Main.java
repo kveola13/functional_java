@@ -13,6 +13,7 @@ public class Main {
                 new Unit("Regis", VAMPIRE),
                 new Unit("Shupe", OGROID)
         );
+        System.out.println(units.toString());
     }
 
     static class Unit {
