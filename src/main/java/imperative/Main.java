@@ -2,6 +2,7 @@ package imperative;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static imperative.Main.Race.*;
@@ -31,8 +32,9 @@ public class Main {
             System.out.println(unit);
         }
 
+        Predicate<Unit> unitPredicate = unit -> VAMPIRE.equals(unit.race);
         List<Unit> vampireList = units.stream()
-                .filter(unit -> VAMPIRE.equals(unit.race))
+                .filter(unitPredicate)
                 .collect(Collectors.toList());
         vampireList.forEach(System.out::println);
     }
