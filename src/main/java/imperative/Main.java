@@ -31,9 +31,10 @@ public class Main {
             System.out.println(unit);
         }
 
-        units.stream().filter(unit -> VAMPIRE.equals(unit.race))
-                .collect(Collectors.toList())
-                .forEach(System.out::println);
+        List<Unit> vampireList = units.stream()
+                .filter(unit -> VAMPIRE.equals(unit.race))
+                .collect(Collectors.toList());
+        vampireList.forEach(System.out::println);
     }
 
     static class Unit {
