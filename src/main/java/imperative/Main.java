@@ -1,5 +1,6 @@
 package imperative;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static imperative.Main.Race.*;
@@ -11,9 +12,23 @@ public class Main {
                 new Unit("Iorveth", ELF),
                 new Unit("Zoltan", DWARF),
                 new Unit("Regis", VAMPIRE),
-                new Unit("Shupe", OGROID)
+                new Unit("Shupe", OGROID),
+                new Unit("Dettlaff", VAMPIRE),
+                new Unit("Orianna", VAMPIRE),
+                new Unit("Vernossiel", ELF),
+                new Unit("Lambert", WITCHER)
         );
-        System.out.println(units.toString());
+        List<Unit> vampires = new ArrayList<>();
+
+        for (Unit unit : units) {
+            if (VAMPIRE.equals(unit.race)) {
+                vampires.add(unit);
+            }
+        }
+
+        for (Unit unit : vampires) {
+            System.out.println(unit);
+        }
     }
 
     static class Unit {
