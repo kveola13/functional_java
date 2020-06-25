@@ -12,6 +12,9 @@ public class _Function {
 
         int multiply = multiplyByTen.apply(incrementByFunction);
         System.out.println(multiply);
+
+        Integer addOneMultiplyByTen = incrementByOneFunction.andThen(multiplyByTen).apply(1);
+        System.out.println(addOneMultiplyByTen);
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
