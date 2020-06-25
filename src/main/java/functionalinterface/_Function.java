@@ -9,9 +9,14 @@ public class _Function {
 
         Integer incrementByFunction = incrementByOneFunction.apply(1);
         System.out.println(incrementByFunction);
+
+        int multiply = multiplyByTen.apply(incrementByFunction);
+        System.out.println(multiply);
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
+
+    static Function<Integer, Integer> multiplyByTen = number -> number * 10;
 
     static int incrementByOne(int number) {
         return number + 1;
