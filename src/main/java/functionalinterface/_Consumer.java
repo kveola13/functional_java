@@ -2,7 +2,7 @@ package functionalinterface;
 
 public class _Consumer {
     public static void main(String[] args) {
-
+        greetCustomer(new Customer("Lambert", "7894561223"));
     }
 
     static void greetCustomer(Customer customer) {
