@@ -16,6 +16,8 @@ public class _Function {
 
         Integer addOneMultiplyByTen = incrementByOneFunction.andThen(multiplyByTen).apply(1);
         System.out.println(addOneMultiplyByTen);
+
+        System.out.println(incrementByOneAndMultiply(4, 100));
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
