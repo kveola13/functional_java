@@ -18,6 +18,8 @@ public class _Function {
         System.out.println(addOneMultiplyByTen);
 
         System.out.println(incrementByOneAndMultiply(4, 100));
+
+        System.out.println(incrementByOneAndMultiplyBiFunction.apply(4, 100));
     }
 
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
@@ -28,7 +30,7 @@ public class _Function {
         return number + 1;
     }
 
-    BiFunction<Integer, Integer, Integer> incrementByOneAndMultiplyBiFunction =
+    static BiFunction<Integer, Integer, Integer> incrementByOneAndMultiplyBiFunction =
             (numberToIncrementByOne, numberToMultiply) -> (numberToIncrementByOne + 1) * numberToMultiply * 10;
 
     static int incrementByOneAndMultiply(int number, int numberToMultiplyBy) {
