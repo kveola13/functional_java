@@ -1,12 +1,19 @@
 package functionalinterface;
 
+import java.util.function.Predicate;
+
 public class _Predicate {
     public static void main(String[] args) {
         System.out.println(isPhoneNumberValid("004795959595"));
         System.out.println(isPhoneNumberValid("004695959595"));
+        System.out.println(isPhoneNumberValid("00479595959"));
+        System.out.println(isPhoneNumberValid("00469595959"));
     }
 
     static boolean isPhoneNumberValid(String phoneNumber) {
         return phoneNumber.startsWith("0047") && phoneNumber.length() == 12;
     }
+
+    static Predicate<String> isPhoneNumberValidPredicate = phoneNumber ->
+            phoneNumber.startsWith("0047") && phoneNumber.length() == 12;
 }
