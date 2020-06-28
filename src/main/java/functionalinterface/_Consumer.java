@@ -1,5 +1,6 @@
 package functionalinterface;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class _Consumer {
@@ -8,6 +9,10 @@ public class _Consumer {
         greetCustomer(lambert);
         greetCustomerConsumer.accept(lambert);
     }
+
+    static BiConsumer<Customer, Boolean> greetCustomerBiConsumer = (customer, showPhoneNumber) ->
+            System.out.println("Hello" + customer.customerName + ", registered with number "
+            + (showPhoneNumber? customer.customerPhone : "*******"));
 
     static Consumer<Customer> greetCustomerConsumer = customer ->
             System.out.println("Hello " + customer.customerName + ", registered with number: " + customer.customerPhone);
