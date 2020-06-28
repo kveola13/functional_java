@@ -10,11 +10,17 @@ public class _Consumer {
         greetCustomerConsumer.accept(lambert);
 
         greetCustomerBiConsumer.accept(lambert, false);
+        greetCustomerBiConsumer(lambert, false);
     }
 
     static BiConsumer<Customer, Boolean> greetCustomerBiConsumer = (customer, showPhoneNumber) ->
             System.out.println("Hello " + customer.customerName + ", registered with number "
-            + (showPhoneNumber? customer.customerPhone : "*******"));
+                    + (showPhoneNumber ? customer.customerPhone : "*******"));
+
+    static void greetCustomerBiConsumer(Customer customer, boolean showPhoneNumber) {
+        System.out.println("Hello " + customer.customerName + ", registered with number "
+                + (showPhoneNumber ? customer.customerPhone : "*******"));
+    }
 
     static Consumer<Customer> greetCustomerConsumer = customer ->
             System.out.println("Hello " + customer.customerName + ", registered with number: " + customer.customerPhone);
