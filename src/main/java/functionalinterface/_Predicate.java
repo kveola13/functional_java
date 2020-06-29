@@ -8,6 +8,11 @@ public class _Predicate {
         System.out.println(isPhoneNumberValid("004695959595"));
         System.out.println(isPhoneNumberValid("00479595959"));
         System.out.println(isPhoneNumberValid("00469595959"));
+
+        System.out.println(isPhoneNumberValidPredicate.test("004795959595"));
+        System.out.println(isPhoneNumberValidPredicate.test("004795959595"));
+        System.out.println(isPhoneNumberValidPredicate.test("00479595959"));
+        System.out.println(isPhoneNumberValidPredicate.test("00469595959"));
     }
 
     static boolean isPhoneNumberValid(String phoneNumber) {
