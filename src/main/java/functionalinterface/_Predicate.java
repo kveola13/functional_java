@@ -15,6 +15,7 @@ public class _Predicate {
         System.out.println(isPhoneNumberValidPredicate.test("00469595959"));
 
         System.out.println(isPhoneNumberValidPredicate.and(containsNumberNine).test("004795959595"));
+        System.out.println(isPhoneNumberValidPredicate.or(containsNumberNine).test("004795959595"));
     }
 
     static boolean isPhoneNumberValid(String phoneNumber) {
