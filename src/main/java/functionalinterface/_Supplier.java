@@ -1,5 +1,6 @@
 package functionalinterface;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class _Supplier {
@@ -12,5 +13,6 @@ public class _Supplier {
         return "jdbc://localhost:3030/users";
     }
 
-    static Supplier<String> getDBConnectionURLSupplier = () -> "jdbc://localhost:3030/users";
+    static Supplier<List<String>> getDBConnectionURLSupplier = () ->
+            List.of("jdbc://localhost:3030/users", "jdbc://localhost:3030/customers");
 }
