@@ -2,6 +2,8 @@ package streams;
 
 
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import static streams._Stream.Race.*;
 
@@ -18,6 +20,9 @@ public class _Stream {
                 new Unit("Vernossiel", ELF),
                 new Unit("Lambert", WITCHER)
         );
+
+        Consumer<Race> printRaces = System.out::println;
+        units.stream().map(unit -> unit.race).collect(Collectors.toSet()).forEach(printRaces);
 
     }
 
