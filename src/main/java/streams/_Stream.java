@@ -3,6 +3,9 @@ package streams;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.IntConsumer;
+import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 import static streams._Stream.Race.*;
@@ -26,6 +29,12 @@ public class _Stream {
         units.stream().map(unit -> unit.race).collect(Collectors.toSet()).forEach(printRaces);
 
         units.stream().map(unit -> unit.name).mapToInt(String::length).forEach(System.out::println);
+
+        Function<Unit, String> unitStringFunction = unit -> unit.name;
+        ToIntFunction<String> length = String::length;
+        IntConsumer println = System.out::println;
+
+        units.stream().map(unitStringFunction).mapToInt(length).forEach(println);
 
     }
 
