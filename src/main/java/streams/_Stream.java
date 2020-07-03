@@ -25,6 +25,8 @@ public class _Stream {
         Consumer<Race> printRaces = System.out::println;
         units.stream().map(unit -> unit.race).collect(Collectors.toSet()).forEach(printRaces);
 
+        units.stream().map(unit -> unit.name).collect(Collectors.toSet()).forEach(System.out::println);
+
     }
 
     static class Unit {
