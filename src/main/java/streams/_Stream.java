@@ -18,7 +18,8 @@ public class _Stream {
                 new Unit("Dettlaff", VAMPIRE),
                 new Unit("Orianna", VAMPIRE),
                 new Unit("Vernossiel", ELF),
-                new Unit("Lambert", WITCHER)
+                new Unit("Lambert", WITCHER),
+                new Unit("Ardal", HUMAN)
         );
 
         Consumer<Race> printRaces = System.out::println;
