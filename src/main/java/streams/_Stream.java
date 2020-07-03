@@ -30,12 +30,8 @@ public class _Stream {
 
         units.stream().map(unit -> unit.name).mapToInt(String::length).forEach(System.out::println);
 
-        Function<Unit, String> unitStringFunction = unit -> unit.name;
-        ToIntFunction<String> length = String::length;
-        IntConsumer println = System.out::println;
-
-        units.stream().map(unitStringFunction).mapToInt(length).forEach(println);
-
+        boolean doesMatchVampire = units.stream().allMatch(unit -> VAMPIRE.equals(unit.race));
+        System.out.println(doesMatchVampire);
     }
 
     static class Unit {
