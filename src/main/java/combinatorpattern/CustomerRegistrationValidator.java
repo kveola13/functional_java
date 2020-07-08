@@ -21,6 +21,13 @@ public interface CustomerRegistrationValidator extends Function<Customer, Valida
         return customer -> Period.between(customer.getDob(), LocalDate.now()).getYears() > 18 ? SUCCESS : IS_NOT_AN_ADULT;
     }
 
+    default CustomerRegistrationValidator and(CustomerRegistrationValidator other) {
+        return customer -> {
+            ValidationResult result = this.apply(customer);
+            return result.equals(SUCCESS) ? other.apply(customer) : result;
+        };
+    }
+
     enum ValidationResult {
         SUCCESS,
         PHONE_NUMBER_NOT_VALID,
