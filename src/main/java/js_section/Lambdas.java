@@ -1,12 +1,15 @@
 package js_section;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 public class Lambdas {
     public static void main(String[] args) {
-        Function<String, String> upperCaseName = name -> {
+        BiFunction<String, Integer, String> upperCaseName = (name, age) -> {
             if (name.isBlank()) throw new IllegalArgumentException("");
+            System.out.println(age);
             return name.toUpperCase();
         };
+
+        System.out.println(upperCaseName.apply("John", 56));
     }
 }
