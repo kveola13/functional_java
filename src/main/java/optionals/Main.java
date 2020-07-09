@@ -1,5 +1,8 @@
 package optionals;
 
+
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Optional;
 
 public class Main {
@@ -8,5 +11,8 @@ public class Main {
                 () -> {
                     System.out.println("Can't send email to the Baba Yaega");
                 });
+        Optional<Object> empty = Optional.of("Hello");
+        System.out.println(empty.isPresent());
+        System.out.println(empty.isEmpty());
     }
 }
