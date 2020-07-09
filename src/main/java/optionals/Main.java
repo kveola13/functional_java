@@ -11,12 +11,12 @@ public class Main {
                 () -> {
                     System.out.println("Can't send email to the Baba Yaega");
                 });
-        Optional<String> empty = Optional.ofNullable(null);
+        Optional<String> empty = Optional.ofNullable("Hello");
         System.out.println(empty.isPresent());
         System.out.println(empty.isEmpty());
         String orElse = empty.orElse("World");
         System.out.println(orElse);
 
-        empty.ifPresent(System.out::println);
+        empty.ifPresentOrElse(System.out::println, () -> System.out.println("World"));
     }
 }
