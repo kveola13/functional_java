@@ -18,5 +18,27 @@ public class Main {
         System.out.println(orElse);
 
         empty.ifPresentOrElse(System.out::println, () -> System.out.println("World"));
+
+        Person person = new Person("John", "john@wick.com");
+        System.out.println(person.getEmail().toLowerCase());
+
+    }
+
+    static class Person {
+        private final String name;
+        private final String email;
+
+        public Person(String name, String email) {
+            this.name = name;
+            this.email = email;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getEmail() {
+            return email;
+        }
     }
 }
